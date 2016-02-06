@@ -1,13 +1,20 @@
+var Radium = require('radium');
 var React = require('react');
 var Bootstrap = require('react-bootstrap');
 var Row = Bootstrap.Row;
 var Col = Bootstrap.Col;
 
-module.exports = React.createClass({
-    render: function() {
+var styles = {
+    red: {
+        backgroundColor: 'red'
+    }
+};
+
+class Card extends React.Component {
+    render() {
         return (
             <Row>
-                <Col xs={4}>
+                <Col xs={4} style={styles.red}>
                     <Row>
                         <Col xs={12}>
                             7:30 AM
@@ -25,5 +32,6 @@ module.exports = React.createClass({
             </Row>
         );
     }
-});
+}
+module.exports = Radium(Card);
 
