@@ -11,7 +11,7 @@ module.exports = React.createClass({
             <Row>
                 <Col xs={12}>
                     <Row>
-                        <Owl name={this.props.username} message={this.props.message} />
+                        <Owl name={this.props.username} message={this.props.message} state='awake' />
                     </Row>
                     <Row>
                         <HealthBar now={this.props.health} />

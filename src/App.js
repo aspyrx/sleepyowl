@@ -5,6 +5,7 @@ var Grid = require('react-bootstrap/lib/Grid');
 var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
 
+var Dashboard = require('./dashboard/Dashboard');
 var Feed = require('./feed/Feed');
 
 module.exports = React.createClass({
@@ -26,6 +27,7 @@ module.exports = React.createClass({
             <Grid fluid={true}>
                 <Row>
                     <Col md={8}>
+                        <Dashboard />
                     </Col>
                     <Col md={4}>
                         <Feed results={feedArr} />
