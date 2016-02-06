@@ -2,8 +2,8 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Button = require('react-bootstrap').Button;
+var HelloAlert = require('./HelloAlert');
 
 ReactDOM.render(
-        <Button bsStyle="primary">Primary</Button>
+        <HelloAlert message="World" />
 , document.getElementById('root'));
