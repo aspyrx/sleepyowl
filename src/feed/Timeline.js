@@ -1,7 +1,21 @@
 'use strict';
 
+var Radium = require('radium');
 var React = require('react');
-var ReactDOM = require('react-dom');
+var Row = require('react-bootstrap/lib/Row');
+var Col = require('react-bootstrap/lib/Col');
+
+var styles = {
+    label: {
+    	color: 'DarkGray',
+    	float: 'left'
+    },
+
+    line: {
+    	position: 'relative',
+    	top: '50%'
+    }
+};
 
 var SVGComponent = React.createClass({
     render: function() {
@@ -18,17 +32,17 @@ var Line = React.createClass({
 var TimeLine = React.createClass({
 	render: function() {
 		return (
-			<div>
-				<p>{this.props.t}</p>
+			<Row>
+				<p style={styles.label}>{this.props.t}</p>
 				<SVGComponent height="15" width="80">
         			<Line x1="5" y1="5" x2="85" y2="5"
-           		 		strokeWidth="5"
-          	 			stroke="DarkGray" />
+           		 		strokeWidth="2"
+          	 			stroke="DarkGray" style={styles.line}/>
     			</SVGComponent>
-   			</div>
+   			</Row>
     	);
 	}
 });
 
-module.exports = TimeLine;
+module.exports = Radium(TimeLine);
 
