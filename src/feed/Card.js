@@ -3,17 +3,18 @@ var React = require('react');
 var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
 
-var styles = {
-    red: {
-        backgroundColor: 'red'
+var style = {
+    card: {
+        border: '1px solid #DDD',
+        borderRadius: '10px'
     }
 };
 
 class Card extends React.Component {
     render() {
         return (
-            <Row>
-                <Col xs={4} style={styles.red}>
+            <Row style={style.card}>
+                <Col xs={4}>
                     <Row>
                         <Col xs={12}>
                             7:30 AM
