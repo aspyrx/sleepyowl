@@ -7,7 +7,7 @@ var Col = require('react-bootstrap/lib/Col');
 //USAGE:
 // name: username
 // message: message
-// state: "awake" or "asleep"
+// state: "awake" or "asleep", append with "-white"
 
 var style = {
     container: {
@@ -16,7 +16,10 @@ var style = {
 
     img_size: {
         width:'50%',
-        height:'50%'
+        height:'50%' 
+    },
+    msg_size: {
+        fontSize:'200%'
     }
 };
 
@@ -27,8 +30,7 @@ var Owl = React.createClass({
     		<Panel bsStyle="info">
     			<center>
 	    			<Col xs={4} md={2} align="left"><OwlImage state={this.props.state} /></Col>
-	    			<Col xs={4} md={2} align="left" ><OwlMessage name={this.props.name} message={this.props.message}/> </Col>
-	    			<Col xs={8} md={8}></Col>
+	    			<Col xs={4} md={10} align="left" ><OwlMessage name={this.props.name} message={this.props.message}/> </Col>
 	    		</center>
 			</Panel>
 		</div>
@@ -47,8 +49,8 @@ var OwlImage = React.createClass({
 var OwlMessage = React.createClass({
   render: function() {
     return (
-    	<div align="left">
-    		Hello {this.props.name}, {this.props.message}
+    	<div align="left" style={style.msg_size}>
+    		Hello <strong>{this.props.name}</strong>, {this.props.message}
 		</div>
 		);
   }

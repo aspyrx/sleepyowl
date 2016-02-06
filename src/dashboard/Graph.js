@@ -2,7 +2,7 @@
 
 var Radium = require('radium');
 var React = require('react');
-var Chart = require('chart.js');
+var Chart = require('chart.js/');
 var LineChart = require("react-chartjs").Line;
 var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
