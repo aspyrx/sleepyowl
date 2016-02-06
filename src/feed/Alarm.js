@@ -13,7 +13,7 @@ var styles = {
         padding: '5px'
     },
     time: {
-        textAlign: 'center'
+
     },
     name : {
         textAlign: 'left'
@@ -31,14 +31,14 @@ module.exports = Radium(React.createClass({
     render: function() {
         return (
             <Row onClick={this.handleClick} style={styles.overall}>
-                <Col xs={4} style={styles.time}>
-                    {this.props.time}
-                </Col>
-                <Col xs={7} style={styles.name}>
-                    {this.props.name}
+                <Col xs={3} style={styles.time}>
+                    {this.props.start}
                 </Col>
                 <Col xs={1} style={styles.icon}>
                     <Glyphicon glyph="glyphicon glyphicon-time" />
+                </Col>
+                <Col xs={8} style={styles.name}>
+                    {this.props.name}
                 </Col>
             </Row>
         );

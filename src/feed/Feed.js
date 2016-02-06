@@ -11,9 +11,16 @@ module.exports = React.createClass({
     },
     render: function() {
         var rows = [];
-        this.props.results.forEach(function(product) {
-            rows.push(<FeedItem name={product.name} key={product.key} feedtype={product.feedtype} />);
-        });
+        var i = 0;
+        for (var product of this.props.results) {
+            rows.push(
+                <FeedItem start={product.start}
+                end={product.end}
+                name={product.name}
+                key={i}
+                feedtype={product.feedtype} />);
+            i++;
+        }
         return (
             <Row>
                 <Col xs={12}>

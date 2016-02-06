@@ -29,7 +29,7 @@ class Card extends React.Component {
                     </Row>
                 </Col>
                 <Col xs={8}>
-                    { this.props.title }
+                    { this.props.name }
                 </Col>
             </Row>
         );

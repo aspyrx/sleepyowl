@@ -15,19 +15,19 @@ module.exports = React.createClass({
         var feedtype = this.props.feedtype;
         if (feedtype === "alarm") {
             return (
-                <Alarm name={this.props.name} />
+                <Alarm {...this.props} />
             );
         } else if (feedtype === "card") {
             return (
-                <Card title={this.props.name} />
+                <Card {...this.props} />
             );
         } else {
             return (
-                <Timeline t={this.props.name} />
+                <Timeline {...this.props} />
             );
         }
         return (
-            <Timeline t={this.props.name} />
+            <Timeline {...this.props} />
         );
     }
 });
