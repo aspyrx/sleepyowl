@@ -12,44 +12,25 @@ var styles = {
     },
 
     label: {
-    	color: 'DarkGray',
-    },
-
-    lineContainer: {
-        width: '100%'
+    	color: 'DarkGray'
     },
 
     line: {
-    	position: 'relative',
-    	top: '50%'
+        marginTop: '10px',
+        marginBottom: '10px',
+        borderColor: '#DDD'
     }
 };
-
-var SVGComponent = React.createClass({
-    render: function() {
-        return <svg {...this.props}>{this.props.children}</svg>;
-    }
-});
-
-var Line = React.createClass({
-    render: function() {
-        return <line {...this.props}>{this.props.children}</line>;
-    }
-});
 
 var TimeLine = React.createClass({
 	render: function() {
 		return (
             <Row style={styles.container}>
-                <Col xs={1}>
+                <Col xs={2}>
                     <span style={styles.label}>{this.props.start}</span>
                 </Col>
-                <Col xs={11}>
-                    <SVGComponent height="15" style={styles.lineContainer}>
-                        <Line x1="5" y1="5" x2="85" y2="5"
-                            strokeWidth="2"
-                            stroke="DarkGray" style={styles.line}/>
-                    </SVGComponent>
+                <Col xs={10}>
+                    <hr style={styles.line} />
                 </Col>
    			</Row>
     	);
