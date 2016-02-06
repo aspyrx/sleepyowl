@@ -27,7 +27,7 @@ module.exports = React.createClass({
             <Grid fluid={true}>
                 <Row>
                     <Col md={8}>
-                        <Dashboard username="Amukta" message="you're at a hackathon! You can't sleep." state="awake" health={32}/>
+                        <Dashboard username="Amukta" message="you're at TartanHacks! You can't sleep." state="awake" health={32}/>
                     </Col>
                     <Col md={4}>
                         <Feed results={feedArr} />
