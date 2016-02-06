@@ -11,6 +11,10 @@ module.exports = function(grunt) {
                 },
             }
         },
+        clean: {
+            build: ['build'],
+            dist: ['dist']
+        },
         watch: {
             options: {
                 livereload: true,
@@ -78,10 +82,30 @@ module.exports = function(grunt) {
             }
         },
         copy: {
-          main: {
-            src: 'img/*',
-            dest: 'build/',
-          },
+            build: {
+                files: [{
+                    expand: true,
+                    src: 'img/**',
+                    dest: 'build/'
+                }, {
+                    expand: true,
+                    cwd: 'node_modules/bootstrap/',
+                    src: 'fonts/**',
+                    dest: 'build/'
+                }]
+            },
+            dist: {
+                files: [{
+                    expand: true,
+                    src: 'img/**',
+                    dest: 'dist/'
+                }, {
+                    expand: true,
+                    cwd: 'node_modules/bootstrap/',
+                    src: 'fonts/**',
+                    dest: 'dist/'
+                }]
+            }
         },
     });
 
@@ -93,8 +117,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
-    grunt.registerTask('build', ['browserify:build', 'less:build', 'htmlmin:build']);
-    grunt.registerTask('dist', ['build', 'htmlmin:dist', 'uglify:dist', 'cssmin:dist']);
+    grunt.registerTask('build', ['clean:build', 'copy:build', 'browserify:build', 'less:build', 'htmlmin:build']);
+    grunt.registerTask('dist', ['clean:dist', 'copy:dist', 'build', 'htmlmin:dist', 'uglify:dist', 'cssmin:dist']);
     grunt.registerTask('default', ['connect:build', 'watch']);
 };

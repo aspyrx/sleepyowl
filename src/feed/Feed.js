@@ -2,7 +2,8 @@
 
 var React = require('react');
 var Bootstrap = require('react-bootstrap');
-var Container = Bootstrap.Container;
+var Row = Bootstrap.Row;
+var Col = Bootstrap.Col;
 var FeedItem = require('./FeedItem');
 
 module.exports = React.createClass({
@@ -15,9 +16,11 @@ module.exports = React.createClass({
             rows.push(<FeedItem name={product.name} key={product.key} feedtype={product.feedtype} />);
         });
         return (
-            <Container>
-                {rows}
-            </Container>
+            <Row>
+                <Col xs={12}>
+                    {rows}
+                </Col>
+            </Row>
         );
     }
 });
