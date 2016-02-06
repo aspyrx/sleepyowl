@@ -16,10 +16,10 @@ var style = {
 
     img_size: {
         width:'50%',
-        height:'50%' 
+        height:'50%'
     },
     msg_size: {
-        fontSize:'200%'
+        fontSize: '200%'
     }
 };
 
@@ -41,7 +41,7 @@ var Owl = React.createClass({
 var OwlImage = React.createClass({
   render: function() {
   		return (
-    		<img src={'img/owl-'+ this.props.state+'.png'} align="right" style={style.img_size} />
+    		<img src={'img/owl-'+ this.props.state+'.png'} align="right" alt="OvO" style={style.img_size} />
     	);
   }
 });

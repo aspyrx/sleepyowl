@@ -30,6 +30,16 @@ module.exports = React.createClass({
                     <Row>
                         <Graph />
                     </Row>
+                    <hr />
+                    <div class="navbar navbar-fixed-bottom"> 
+			            <Row>
+			            	<center>
+							  <p>Copyright (c) 2016 Amukta Nayak, Neil Xu, Claire Yuan, and Stan Zhang</p>
+							  <p>Questions or comments? Give us a hoot on <a href="https://github.com/aspyrx/sleepyowl">GitHub</a>
+							  </p>
+							</center>
+						</Row>
+					</div>
                 </Col>
             </Row>
 		);
