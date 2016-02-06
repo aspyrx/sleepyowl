@@ -1,9 +1,10 @@
 'use strict'
 
 var React = require('react');
-var ReactDOM = require('react-dom');
-var Glyphicon = require('react-bootstrap').Glyphicon;
-var Row = require('react-bootstrap').Row;
+var Bootstrap = require('react-bootstrap');
+var Glyphicon = Bootstrap.Glyphicon;
+var Row = Bootstrap.Row;
+var Col = Bootstrap.Col;
 
 module.exports = React.createClass({
     handleClick: function(event) {
@@ -14,8 +15,15 @@ module.exports = React.createClass({
         var alarmName = this.props.name;
         return (
             <Row onClick={this.handleClick}>
-                <Glyphicon glyph="glyphicon glyphicon-time" />
-                {time}, {alarmName}.
+                <Col xs={4}>
+                    {this.props.time}
+                </Col>
+                <Col xs={1}>
+                    <Glyphicon glyph="glyphicon glyphicon-time" />
+                </Col>
+                <Col xs={7}>
+                    {this.props.name}
+                </Col>
             </Row>
         );
     }
