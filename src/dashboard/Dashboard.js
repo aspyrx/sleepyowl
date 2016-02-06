@@ -3,7 +3,7 @@ var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
 var Owl = require('./Owl');
 var HealthBar = require('./HealthBar');
-
+var Graph = require('./Graph');
 
 module.exports = React.createClass({
   render: function() {
@@ -15,6 +15,9 @@ module.exports = React.createClass({
                     </Row>
                     <Row>
                         <HealthBar now={this.props.health} />
+                    </Row>
+                    <Row>
+                        <Graph />
                     </Row>
                 </Col>
             </Row>

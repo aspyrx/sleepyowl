@@ -2,18 +2,17 @@
 
 var Radium = require('radium');
 var React = require('react');
-var ReactDOM = require('react-dom');
-var Chart = require('../../node_modules/chart.js'); 
+var Chart = require('chart.js');
 var LineChart = require("react-chartjs").Line;
+var Row = require('react-bootstrap/lib/Row');
+var Col = require('react-bootstrap/lib/Col');
 
 var styles = {
     chart: {
-        float: 'left',
-        display: 'inline'
+        display: 'block',
+        margin: 'auto'
     },
-
     legend: {
-        float: 'right',
         padding: '5px',
         borderStyle: 'solid',
         borderColor: 'Silver',
@@ -21,19 +20,9 @@ var styles = {
 
     },
 
-    key: {
-        display: 'inline-block'
-
-    },
-
     legendTitle: {
         textAlign: 'center',
         paddingBottom: '10px'
-    },
-
-    inline: {
-        display: 'inline',
-        width: '80%'
     }
 };
 
@@ -128,27 +117,43 @@ var MyComponent = React.createClass({
         responsive: false
     };
     return (
-    <div> 
-        <div style={styles.inline}>
-            <h1 style={styles.legendTitle}>Hours of sleep per day</h1>
-            <LineChart data={chartData} options={chartOptions} width="600" height="250" />
-        </div>
-        <div style={styles.legend}>
-            <h3 style={styles.legendTitle}>Legend</h3>
-            <div>
-                <SVGComponent height="20" width="35" >
-                    <Circle cx="10" cy="10" r="10" fill="rgba(220,220,220,1)" />
-                </SVGComponent>
-                <p style={styles.key}> Target sleep </p>
-            </div>
-            <div>
-                <SVGComponent height="20" width="35">
-                    <Circle cx="10" cy="10" r="10" fill="rgba(151,187,205,1)" />
-                </SVGComponent>
-                <p style={styles.key}> Your sleep </p>
-            </div>
-        </div>
-    </div>
+    <Row>
+        <Col xs={12}>
+            <Row>
+                <Col xs={9}>
+                    <h1 style={styles.legendTitle}>Hours of sleep per day</h1>
+                </Col>
+            </Row>
+            <Row>
+                <Col xs={9}>
+                    <LineChart style={styles.chart} data={chartData} options={chartOptions} width="600" height="250" />
+                </Col>
+                <Col xs={3} style={styles.legend}>
+                    <h3 style={styles.legendTitle}>Legend</h3>
+                    <Row>
+                        <Col xs={2}>
+                            <SVGComponent height="20" width="35" >
+                                <Circle cx="10" cy="10" r="10" fill="rgba(220,220,220,1)" />
+                            </SVGComponent>
+                        </Col>
+                        <Col xs={10}>
+                            <p>Target sleep</p>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={2}>
+                            <SVGComponent height="20" width="35">
+                                <Circle cx="10" cy="10" r="10" fill="rgba(151,187,205,1)" />
+                            </SVGComponent>
+                        </Col>
+                        <Col xs={10}>
+                            <p>Your sleep</p>
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
+        </Col>
+    </Row>
     );
   }
 });
