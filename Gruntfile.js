@@ -76,7 +76,13 @@ module.exports = function(grunt) {
                     'dist/style.css': 'build/style.css'
                 }
             }
-        }
+        },
+        copy: {
+          main: {
+            src: 'img/*',
+            dest: 'build/',
+          },
+        },
     });
 
     grunt.loadNpmTasks('grunt-browserify');
@@ -86,6 +92,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     grunt.registerTask('build', ['browserify:build', 'less:build', 'htmlmin:build']);
     grunt.registerTask('dist', ['build', 'htmlmin:dist', 'uglify:dist', 'cssmin:dist']);
