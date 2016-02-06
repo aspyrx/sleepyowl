@@ -1,9 +1,41 @@
 'use strict';
 
+var Radium = require('radium');
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Chart = require('../../node_modules/chart.js'); 
 var LineChart = require("react-chartjs").Line;
+
+var styles = {
+    chart: {
+        float: 'left',
+        display: 'inline'
+    },
+
+    legend: {
+        float: 'right',
+        padding: '5px',
+        borderStyle: 'solid',
+        borderColor: 'Silver',
+        width: '20%'
+
+    },
+
+    key: {
+        display: 'inline-block'
+
+    },
+
+    legendTitle: {
+        textAlign: 'center',
+        paddingBottom: '10px'
+    },
+
+    inline: {
+        display: 'inline',
+        width: '80%'
+    }
+};
 
 var SVGComponent = React.createClass({
     render: function() {
@@ -91,22 +123,31 @@ var MyComponent = React.createClass({
 
         // Boolean - Determines whether to draw tooltips on the canvas or not
         showTooltips: false,
+
+        // Boolean - whether or not the chart should be responsive and resize when the browser does.
+        responsive: false
     };
     return (
-    <div>
-        <div>
-            <h3>Legend</h3>
-            <SVGComponent height="50" width="50">
-                <Circle cx="10" cy="10" r="10" fill="rgba(220,220,220,1)" />
-            </SVGComponent>
-            <p> Target sleep </p>
-
-            <SVGComponent height="50" width="50">
-                <Circle cx="10" cy="30" r="10" fill="rgba(151,187,205,1)" />
-            </SVGComponent>
-            <p> Your sleep </p>
+    <div> 
+        <div style={styles.inline}>
+            <h1 style={styles.legendTitle}>Hours of sleep per day</h1>
+            <LineChart data={chartData} options={chartOptions} width="600" height="250" />
         </div>
-        <LineChart data={chartData} options={chartOptions} width="600" height="250" />
+        <div style={styles.legend}>
+            <h3 style={styles.legendTitle}>Legend</h3>
+            <div>
+                <SVGComponent height="20" width="35" >
+                    <Circle cx="10" cy="10" r="10" fill="rgba(220,220,220,1)" />
+                </SVGComponent>
+                <p style={styles.key}> Target sleep </p>
+            </div>
+            <div>
+                <SVGComponent height="20" width="35">
+                    <Circle cx="10" cy="10" r="10" fill="rgba(151,187,205,1)" />
+                </SVGComponent>
+                <p style={styles.key}> Your sleep </p>
+            </div>
+        </div>
     </div>
     );
   }
