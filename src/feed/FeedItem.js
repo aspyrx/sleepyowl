@@ -2,8 +2,6 @@
 'use strict'
 
 var React = require('react');
-var Bootstrap = require('react-bootstrap');
-var Container = Bootstrap.Container;
 
 var Alarm = require('./Alarm');
 var Card = require('./Card');

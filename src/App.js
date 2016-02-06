@@ -1,10 +1,9 @@
 'use strict';
 
 var React = require('react');
-var Bootstrap = require('react-bootstrap');
-var Grid = Bootstrap.Grid;
-var Row = Bootstrap.Row;
-var Col = Bootstrap.Col;
+var Grid = require('react-bootstrap/lib/Grid');
+var Row = require('react-bootstrap/lib/Row');
+var Col = require('react-bootstrap/lib/Col');
 
 var Feed = require('./feed/Feed');
 

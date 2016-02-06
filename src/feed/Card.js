@@ -1,8 +1,7 @@
 var Radium = require('radium');
 var React = require('react');
-var Bootstrap = require('react-bootstrap');
-var Row = Bootstrap.Row;
-var Col = Bootstrap.Col;
+var Row = require('react-bootstrap/lib/Row');
+var Col = require('react-bootstrap/lib/Col');
 
 var styles = {
     red: {
