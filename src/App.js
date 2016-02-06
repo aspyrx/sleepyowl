@@ -19,6 +19,21 @@ var styles = {
 class App extends React.Component {
     render() {
         var feedArr = [
+            {feedtype: 'timeline', start: '6:00'},
+            {feedtype: 'timeline', start: '7:00'},
+            {feedtype: 'card', name: 'Dinner with family', start: '7:00', end: '8:00'},
+            {feedtype: 'timeline', start: '8:00'},
+            {feedtype: 'timeline', start: '9:00'},
+            {feedtype: 'timeline', start: '10:00'},
+            {feedtype: 'timeline', start: '11:00'},
+            {feedtype: 'card', name: 'Sleep!', start: '11:00 PM', end: '7:00 AM'},
+            {feedtype: 'timeline', start: '12:00 AM'},
+            {feedtype: 'timeline', start: '1:00'},
+            {feedtype: 'timeline', start: '2:00'},
+            {feedtype: 'timeline', start: '3:00'},
+            {feedtype: 'timeline', start: '4:00'},
+            {feedtype: 'timeline', start: '5:00'},
+            {feedtype: 'timeline', start: '6:00'},
             {feedtype: 'timeline', start: '7:00'},
             {feedtype: 'alarm', name: 'Ding Dong Wakeup!', start: '7:00'},
             {feedtype: 'timeline', start: '8:00'},
@@ -30,7 +45,7 @@ class App extends React.Component {
             {feedtype: 'alarm', name: 'Boring Meeting', start: '10:15'},
             {feedtype: 'card', name: 'Boring Meeting', start: '10:05', end: '10:25'},
             {feedtype: 'timeline', start: '11:00'},
-            {feedtype: 'timeline', start: '12:00'},
+            {feedtype: 'timeline', start: '12:00 PM'},
             {feedtype: 'timeline', start: '1:00'},
             {feedtype: 'card', name: 'Naptime!', start: '1:00', end: '1:30'},
             {feedtype: 'timeline', start: '2:00'},
@@ -41,15 +56,7 @@ class App extends React.Component {
             {feedtype: 'timeline', start: '5:00'},
             {feedtype: 'alarm', name: 'Time to take over the world!', start: '5:30'},
             {feedtype: 'card', name: 'Take over the world', start: '5:30', end: '7:00'},
-            {feedtype: 'timeline', start: '6:00'},
-            {feedtype: 'timeline', start: '7:00'},
-            {feedtype: 'card', name: 'Dinner with family', start: '7:00', end: '8:00'},
-            {feedtype: 'timeline', start: '8:00'},
-            {feedtype: 'timeline', start: '9:00'},
-            {feedtype: 'timeline', start: '10:00'},
-            {feedtype: 'timeline', start: '11:00'},
-            {feedtype: 'card', name: 'Sleep!', start: '11:00', end: '7:00'},
-            {feedtype: 'timeline', start: '12:00'}
+
         ];
 
         return (

@@ -7,7 +7,7 @@ var ProgressBar = require('react-bootstrap/lib/ProgressBar');
 var Progress = React.createClass({
 	render: function() {
 		return (
-			<ProgressBar active bsStyle='info' now={this.props.now} label="%(percent)s%" />
+			<ProgressBar active bsStyle='info' now={this.props.now} label="Inner Vitality: %(percent)s%" />
 			);
 	}
 });
