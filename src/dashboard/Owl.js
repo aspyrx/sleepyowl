@@ -9,6 +9,13 @@ var Col = require('react-bootstrap/lib/Col');
 // message: message
 // state: "awake" or "asleep"
 
+var style = {
+    img_size: {
+        width:'50%',
+        height:'50%'
+    }
+};
+
 var Owl = React.createClass({
   render: function() {
     return (
@@ -28,7 +35,7 @@ var Owl = React.createClass({
 var OwlImage = React.createClass({
   render: function() {
   		return (
-    		<img src={'img/owl-'+ this.props.state+'.png'} width="67" height="56" align="right" />
+    		<img src={'img/owl-'+ this.props.state+'.png'} align="right" style={style.img_size} />
     	);
   }
 });
@@ -44,4 +51,3 @@ var OwlMessage = React.createClass({
 });
 
 module.exports = Owl; 
-
