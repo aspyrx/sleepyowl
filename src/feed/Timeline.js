@@ -6,9 +6,17 @@ var Row = require('react-bootstrap/lib/Row');
 var Col = require('react-bootstrap/lib/Col');
 
 var styles = {
+    container: {
+        margin: '10px',
+        padding: '5px'
+    },
+
     label: {
     	color: 'DarkGray',
-    	float: 'left'
+    },
+
+    lineContainer: {
+        width: '100%'
     },
 
     line: {
@@ -32,13 +40,17 @@ var Line = React.createClass({
 var TimeLine = React.createClass({
 	render: function() {
 		return (
-			<Row>
-				<p style={styles.label}>{this.props.t}</p>
-				<SVGComponent height="15" width="80">
-        			<Line x1="5" y1="5" x2="85" y2="5"
-           		 		strokeWidth="2"
-          	 			stroke="DarkGray" style={styles.line}/>
-    			</SVGComponent>
+            <Row style={styles.container}>
+                <Col xs={1}>
+                    <span style={styles.label}>{this.props.start}</span>
+                </Col>
+                <Col xs={11}>
+                    <SVGComponent height="15" style={styles.lineContainer}>
+                        <Line x1="5" y1="5" x2="85" y2="5"
+                            strokeWidth="2"
+                            stroke="DarkGray" style={styles.line}/>
+                    </SVGComponent>
+                </Col>
    			</Row>
     	);
 	}

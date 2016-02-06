@@ -6,7 +6,9 @@ var Col = require('react-bootstrap/lib/Col');
 var style = {
     card: {
         border: '1px solid #DDD',
-        borderRadius: '10px'
+        borderRadius: '10px',
+        margin: '10px',
+        padding: '5px'
     }
 };
 
@@ -17,12 +19,12 @@ class Card extends React.Component {
                 <Col xs={4}>
                     <Row>
                         <Col xs={12}>
-                            7:30 AM
+                            { this.props.start }
                         </Col>
                     </Row>
                     <Row>
                         <Col xs={12}>
-                            8:30 AM
+                            { this.props.end }
                         </Col>
                     </Row>
                 </Col>
