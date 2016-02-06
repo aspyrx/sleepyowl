@@ -3,18 +3,18 @@ var React = require('react');
 
 var Owl = React.createClass({
   render: function() {
-    return 
-    	(<div>
+    return (
+    	<div>
     		<OwlImage name={this.props.name} />
     		<OwlMessage name={this.props.name} message={this.props.message} />
-		</div>);
+		</div>
+		);
   }
 });
 
 var OwlImage = React.createClass({
   render: function() {
-    return
-    	(
+    return (
     		<img src='https://upload.wikimedia.org/wikipedia/commons/7/75/Druplicon.vector.svg'/>
     	 );
   }
@@ -22,10 +22,11 @@ var OwlImage = React.createClass({
 
 var OwlMessage = React.createClass({
   render: function() {
-    return 
-    	(<div>
+    return (
+    	<div>
     		Hello {this.props.name}, {this.props.message}
-		</div>);
+		</div>
+		);
   }
 });
 
